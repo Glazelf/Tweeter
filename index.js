@@ -2,10 +2,10 @@ const Twitter = require('twitter-lite');
 const config = require('./config.json');
 
 const client = new Twitter({
-    consumer_key: config.API,
-    consumer_secret: config.APISecret,
-    access_token_key: config.AccessToken,
-    access_token_secret: config.AccessTokenSecret,
+    consumer_key: config.consumer_key,
+    consumer_secret: config.consumer_secret,
+    access_token_key: config.access_token_key,
+    access_token_secret: config.access_token_secret,
 });
 
 // Set body to an object
