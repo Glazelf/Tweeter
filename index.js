@@ -1,19 +1,15 @@
 const Twitter = require('twitter-lite');
 const config = require('./config.json');
 
-const client = new Twitter({
-    consumer_key: config.consumer_key,
-    consumer_secret: config.consumer_secret,
-    access_token_key: config.access_token_key,
-    access_token_secret: config.access_token_secret,
-});
+const client = new Twitter(config);
 
 // Set body to an object
 let postBody = {
-    'status': config.TweetText
+    'status': `twitter api kinda dum`
 };
 
 client.post('statuses/update', postBody).then(result => {
+    console.log(result);
     console.log(`You successfully tweeted this: "${result.text}"`);
 }).catch(console.error);
 
