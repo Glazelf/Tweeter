@@ -13,6 +13,4 @@ client.post('statuses/update', postBody).then(result => {
     console.log(`You successfully tweeted this: "${result.text}"`);
 }).catch(console.error);
 
-console.log("aa");
-
-return console.log("Success!")
+return console.log("Success!");
