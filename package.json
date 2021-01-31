@@ -4,7 +4,7 @@
   "description": "personal twitter testing garbage",
   "main": "index.js",
   "dependencies": {
-    "twitter-v2": "^1.0.2"
+    "twitter-lite": "^0.14.0"
   },
   "devDependencies": {},
   "scripts": {
