@@ -1,16 +1,24 @@
 const Twitter = require('twitter-lite');
 const config = require('./config.json');
+const readline = require('readline-sync');
 
 const client = new Twitter(config);
 
-// Set body to an object
-let postBody = {
-    'status': `twitter api kinda dum`
+// Adaptive tweet text and checks
+let tweetText = readline.question("Tweet body:");
+if (tweetText.length > 200) {
+    return console.log("Tweet body can only be 200 characters long.");
+} else if (tweetText.length < 1) {
+    return console.log("Tweet body has to be at least 1 character long.");
 };
 
-client.post('statuses/update', postBody).then(result => {
-    console.log(result);
-    console.log(`You successfully tweeted this: "${result.text}"`);
-}).catch(console.error);
+// Set body to an object
+let postBody = {
+    'status': tweetText
+};
 
-return console.log("Success!");
+// Tweet
+client.post('statuses/update', postBody).catch(console.error).then(result => {
+    console.log(result);
+    return console.log(`You successfully tweeted this: "${result.text}"`);
+});
