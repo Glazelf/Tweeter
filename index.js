@@ -5,7 +5,7 @@ const readline = require('readline-sync');
 const client = new Twitter(config);
 
 // Adaptive tweet text and checks
-let tweetText = readline.question("Tweet body:");
+let tweetText = readline.question("Tweet body: ");
 if (tweetText.length > 280) {
     return console.log("Tweet body can only be 280 characters long.");
 } else if (tweetText.length < 1) {
