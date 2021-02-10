@@ -1,7 +1,6 @@
-const Twitter = require('twitter-lite');
 const config = require('./config.json');
 const readline = require('readline-sync');
-
+const Twitter = require('twitter-lite');
 const client = new Twitter(config);
 
 // Adaptive tweet text and checks
