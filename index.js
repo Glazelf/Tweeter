@@ -1,5 +1,5 @@
-const config = require('./config.json');
 const readline = require('readline-sync');
+const config = require('./config.json');
 const Twitter = require('twitter-lite');
 const client = new Twitter(config);
 
